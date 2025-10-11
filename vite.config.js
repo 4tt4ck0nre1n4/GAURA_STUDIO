@@ -6,73 +6,46 @@ import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import fs from 'fs';
 
-const configs = {
-  pageData: {},
+let configs = {
+  pageData: {}
 };
 
-const readConfigJSONFile = async (filePath) => {
-  return new Promise((resolve) => {
-    const file = fs.readFileSync(filePath, 'utf-8');
-    resolve(JSON.parse(file));
-  });
-};
-
-export default defineConfig(async () => {
+const readConfigJSONFile = (filePath) => {
   try {
-    configs.pageData = await readConfigJSONFile('./src/configs/pageData.json');
+    const file = fs.readFileSync(filePath, 'utf-8');
+    return JSON.parse(file);
   } catch (error) {
     console.warn('Failed to load pageData.json:', error.message);
-    configs.pageData = {};
+    return {};
   }
+};
+
+export default defineConfig(() => {
+  configs.pageData = readConfigJSONFile('./src/configs/pageData.json');
 
   return {
-    root: path.resolve(__dirname, './src'),
-    publicDir: path.resolve(__dirname, 'public'),
     build: {
-      outDir: '../dist',
+      outDir: 'dist',
       emptyOutDir: true,
       rollupOptions: {
         input: {
-          index: './src/index.html',
-          thanks: './src/thanks.html',
-          404: './src/404.html',
-        },
-        output: {
-          assetFileNames: (assetInfo) => {
-            if (/\.(jpg|jpeg|png|svg|ico|gif|webp)$/.test(assetInfo.name)) {
-              return 'assets/images/[name].[ext]';
-            }
-            if (/\.(ttf|otf|eot|woff|woff2)$/.test(assetInfo.name)) {
-              return 'assets/fonts/[name].[hash].[ext]';
-            }
-            if (/\.css$/.test(assetInfo.name)) {
-              return 'assets/css/[name].[hash].[ext]';
-            }
-            return `assets/${assetInfo}/[name].[hash].[ext]`;
-          },
-          chunkFileNames: 'assets/js/[name].[hash].js',
-          entryFileNames: 'assets/js/main.[hash].js',
-        },
-      },
-      assetsInlineLimit: 0,
-      css: {
-        devSourcemap: true,
-        postcss: {
-          plugins: [autoprefixer()],
+          index: path.resolve(__dirname, 'src/index.html'),
+          thanks: path.resolve(__dirname, 'src/thanks.html'),
+          404: path.resolve(__dirname, 'src/404.html'),
         },
       },
     },
     plugins: [
       handlebars({
         partialDirectory: [
-          './src/includes/common',
-          './src/includes/components',
-          './src/includes/modules',
+          path.resolve(__dirname, 'src/includes/common'),
+          path.resolve(__dirname, 'src/includes/components'),
+          path.resolve(__dirname, 'src/includes/modules'),
         ],
-        context: async (pagePath) => {
+        context: (pagePath) => {
           return {
             ...configs.pageData,
-            page: typeof configs.pageData[pagePath] !== 'undefined' && configs.pageData[pagePath],
+            page: configs.pageData[pagePath] || {},
             pagePath: pagePath,
           };
         },
