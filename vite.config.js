@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import path from 'path';
+import { resolve } from 'path';
 import handlebars from 'vite-plugin-handlebars';
 import autoprefixer from 'autoprefixer';
 import { ViteMinifyPlugin } from 'vite-plugin-minify';
@@ -20,28 +20,33 @@ const readConfigJSONFile = (filePath) => {
   }
 };
 
+const root = resolve(__dirname, './src');
+
 export default defineConfig(() => {
   configs.pageData = readConfigJSONFile('./src/configs/pageData.json');
 
   return {
-    root: './src',
+    root: root,
+    base: '/',
+    publicDir: resolve(__dirname, 'public'),
     build: {
-      outDir: '../dist',
+      outDir: resolve(__dirname, 'dist'),
       emptyOutDir: true,
       rollupOptions: {
         input: {
-          index: path.resolve(process.cwd(), 'src/index.html'),
-          thanks: path.resolve(process.cwd(), 'src/thanks.html'),
-          404: path.resolve(process.cwd(), 'src/404.html'),
+          index: resolve(__dirname, './src/index.html'),
+          thanks: resolve(__dirname, './src/thanks.html'),
+          404: resolve(__dirname, './src/404.html'),
         },
       },
     },
     plugins: [
+      ViteMinifyPlugin(),
       handlebars({
         partialDirectory: [
-          path.resolve(process.cwd(), 'src/includes/common'),
-          path.resolve(process.cwd(), 'src/includes/components'),
-          path.resolve(process.cwd(), 'src/includes/modules'),
+          resolve(__dirname, 'src/includes/common'),
+          resolve(__dirname, 'src/includes/components'),
+          resolve(__dirname, 'src/includes/modules'),
         ],
         context: (pagePath) => {
           return {
@@ -51,13 +56,12 @@ export default defineConfig(() => {
           };
         },
       }),
-      ViteMinifyPlugin(),
       ViteImageOptimizer(configs.pageData.image?.optimization || {}),
     ],
     resolve: {
       alias: {
-        '@': path.resolve(process.cwd(), 'src/assets/scss'),
-        '@js': path.resolve(process.cwd(), 'src/assets/js'),
+        '@': resolve(__dirname, 'src/assets/scss'),
+        '@js': resolve(__dirname, 'src/assets/js'),
       },
     },
   };
