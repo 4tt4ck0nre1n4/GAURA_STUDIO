@@ -6,8 +6,8 @@ import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import fs from 'fs';
 
-let configs = {
-  pageData: {}
+const configs = {
+  pageData: {},
 };
 
 const readConfigJSONFile = (filePath) => {
