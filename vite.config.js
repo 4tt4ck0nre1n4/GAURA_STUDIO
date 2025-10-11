@@ -26,12 +26,6 @@ export default defineConfig(async () => {
   }
 
   return {
-    root: './src',
-    publicDir: '../public',
-    server: {
-      port: 8080,
-      strictPort: false, // ポートが使用中の場合は別のポートを自動選択
-    },
     build: {
       outDir: '../dist',
       emptyOutDir: true,
@@ -66,7 +60,6 @@ export default defineConfig(async () => {
         },
       },
     },
-    assetsInclude: ['../public'],
     plugins: [
       handlebars({
         partialDirectory: [
@@ -85,11 +78,5 @@ export default defineConfig(async () => {
       ViteMinifyPlugin(),
       ViteImageOptimizer(configs.pageData.image?.optimization || {}),
     ],
-    resolve: {
-        alias: {
-          '@': 'src/assets/scss',
-          '@js': 'src/assets/js',
-        },
-    },
   };
 });
