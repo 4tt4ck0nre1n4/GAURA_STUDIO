@@ -24,8 +24,9 @@ export default defineConfig(() => {
   configs.pageData = readConfigJSONFile('./src/configs/pageData.json');
 
   return {
+    root: './src',
     build: {
-      outDir: 'dist',
+      outDir: '../dist',
       emptyOutDir: true,
       rollupOptions: {
         input: {
