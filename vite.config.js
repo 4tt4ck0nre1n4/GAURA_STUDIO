@@ -26,6 +26,8 @@ export default defineConfig(async () => {
   }
 
   return {
+    root: path.resolve(__dirname, './src'),
+    publicDir: path.resolve(__dirname, 'public'),
     build: {
       outDir: '../dist',
       emptyOutDir: true,
@@ -78,5 +80,11 @@ export default defineConfig(async () => {
       ViteMinifyPlugin(),
       ViteImageOptimizer(configs.pageData.image?.optimization || {}),
     ],
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src/assets/scss'),
+        '@js': path.resolve(__dirname, 'src/assets/js'),
+      },
+    },
   };
 });
