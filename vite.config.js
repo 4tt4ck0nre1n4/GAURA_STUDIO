@@ -20,7 +20,7 @@ const readConfigJSONFile = (filePath) => {
   }
 };
 
-const root = resolve(__dirname, './src');
+const root = resolve(__dirname, './src/pages');
 
 export default defineConfig(() => {
   configs.pageData = readConfigJSONFile('./src/configs/pageData.json');
@@ -34,9 +34,9 @@ export default defineConfig(() => {
       emptyOutDir: true,
       rollupOptions: {
         input: {
-          index: resolve(__dirname, './src/index.html'),
-          thanks: resolve(__dirname, './src/thanks.html'),
-          404: resolve(__dirname, './src/404.html'),
+          index: resolve(__dirname, './src/pages/index.html'),
+          thanks: resolve(__dirname, './src/pages/thanks.html'),
+          404: resolve(__dirname, './src/pages/404.html'),
         },
       },
     },
