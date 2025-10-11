@@ -26,20 +26,20 @@ export default defineConfig(async () => {
   }
 
   return {
-    root: path.resolve(__dirname, './src'),
-    publicDir: path.resolve(__dirname, 'public'),
+    root: './src',
+    publicDir: '../public',
     server: {
       port: 8080,
       strictPort: false, // ポートが使用中の場合は別のポートを自動選択
     },
     build: {
-      outDir: path.resolve(__dirname, './dist'),
+      outDir: '../dist',
       emptyOutDir: true,
       rollupOptions: {
         input: {
-          index: path.resolve(__dirname, './src/index.html'),
-          thanks: path.resolve(__dirname, './src/thanks.html'),
-          404: path.resolve(__dirname, './src/404.html'),
+          index: './src/index.html',
+          thanks: './src/thanks.html',
+          404: './src/404.html',
         },
         output: {
           assetFileNames: (assetInfo) => {
@@ -66,13 +66,13 @@ export default defineConfig(async () => {
         },
       },
     },
-    assetsInclude: [path.resolve(__dirname, 'public')],
+    assetsInclude: ['../public'],
     plugins: [
       handlebars({
         partialDirectory: [
-          path.resolve(__dirname, './src/includes/common'),
-          path.resolve(__dirname, './src/includes/components'),
-          path.resolve(__dirname, './src/includes/modules'),
+          './src/includes/common',
+          './src/includes/components',
+          './src/includes/modules',
         ],
         context: async (pagePath) => {
           return {
@@ -86,10 +86,10 @@ export default defineConfig(async () => {
       ViteImageOptimizer(configs.pageData.image?.optimization || {}),
     ],
     resolve: {
-      alias: {
-        '@': path.resolve(__dirname, 'src/assets/scss'),
-        '@js': path.resolve(__dirname, 'src/assets/js'),
-      },
+        alias: {
+          '@': 'src/assets/scss',
+          '@js': 'src/assets/js',
+        },
     },
   };
 });
