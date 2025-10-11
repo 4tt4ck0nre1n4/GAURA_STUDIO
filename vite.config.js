@@ -18,7 +18,12 @@ const readConfigJSONFile = async (filePath) => {
 };
 
 export default defineConfig(async () => {
-  configs.pageData = await readConfigJSONFile('./src/configs/pageData.json');
+  try {
+    configs.pageData = await readConfigJSONFile('./src/configs/pageData.json');
+  } catch (error) {
+    console.warn('Failed to load pageData.json:', error.message);
+    configs.pageData = {};
+  }
 
   return {
     root: path.resolve(__dirname, './src'),
@@ -78,7 +83,7 @@ export default defineConfig(async () => {
         },
       }),
       ViteMinifyPlugin(),
-      ViteImageOptimizer(configs.pageData.image.optimization),
+      ViteImageOptimizer(configs.pageData.image?.optimization || {}),
     ],
     resolve: {
       alias: {
