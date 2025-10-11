@@ -1,0 +1,293 @@
+@use "../global" as g;
+
+canvas {
+  display: block;
+}
+
+#particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+// section "fv"
+.fv {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+
+  // background-position: 90% 30%;
+  background-position: center;
+  background-size: cover;
+
+  @include g.background-image;
+
+  @include g.mq(ls) {
+    // height: 90vh;
+    // background-position: 80%;
+  }
+
+  @include g.mq(ml) {
+    // background-position: 70%;
+  }
+
+  @include g.mq(mm) {
+    // background-position: 74%;
+  }
+
+  @include g.mq(md) {
+    // background-position: 50% 50%;
+  }
+
+  @include g.mq(ms) {
+    background-position: 70%;
+  }
+
+  @include g.mq(sm) {
+    background-position: 74%;
+  }
+}
+
+.fv__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  @include g.mq(ml) {
+    width: 100%;
+  }
+
+  .fv__textInner {
+    position: absolute;
+    top: 28%;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    width: 496px;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+    line-height: 1.8;
+    background: rgba(255, 255, 255, 0.5);
+
+    @include g.mq(lg) {
+      top: 24%;
+      left: 0%;
+    }
+
+    @include g.mq(ls) {
+      top: 24%;
+      left: 0%;
+    }
+
+    @include g.mq(mx) {
+      top: 26%;
+      left: 0%;
+    }
+
+    @include g.mq(ml) {
+      top: 16%;
+      left: 0%;
+    }
+
+    @include g.mq(md) {
+      top: 30%;
+      left: 0%;
+      width: 420px;
+      padding-top: 8px;
+      padding-right: 8px;
+      padding-left: 16px;
+    }
+
+    @include g.mq(ms) {
+      top: 26%;
+      left: 0%;
+    }
+
+    @include g.mq(sl) {
+      top: 42%;
+      left: 0%;
+      padding-right: 16px;
+    }
+
+    @include g.mq(sm) {
+      top: 40%;
+      left: 0%;
+      width: 350px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    @include g.mq(ss) {
+      width: 320px;
+    }
+  }
+}
+
+.fv__text {
+  z-index: 1;
+  margin-top: 24px;
+  font-family: g.$f-f3;
+  font-size: g.$f16;
+  font-weight: 800;
+  line-height: 1.8;
+
+  @include g.mq(lg) {
+    margin-top: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  @include g.mq(ls) {
+    font-size: g.$f16;
+  }
+
+  @include g.mq(ml) {
+    margin-top: 16px;
+    font-size: g.$f15;
+    line-height: 1.6;
+  }
+
+  @include g.mq(md) {
+    letter-spacing: 0.04em;
+  }
+
+  @include g.mq(sl) {
+    font-size: g.$f14;
+    text-align: justify;
+  }
+}
+
+.fv__text {
+  br {
+    display: block;
+
+    @include g.mq(ml) {
+      display: block;
+    }
+
+    @include g.mq(md) {
+      display: block;
+    }
+
+    @include g.mq(sm) {
+      display: none;
+    }
+  }
+}
+
+.fv__imageInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+
+  @include g.mq(ml) {
+    width: 70%;
+    height: auto;
+  }
+
+  @include g.mq(ms) {
+    width: 100%;
+  }
+}
+
+.fv__image {
+  position: absolute;
+  top: 80%;
+  left: 56%;
+  z-index: 2;
+  width: 400px;
+  height: 300px;
+  -o-object-fit: cover;
+  object-fit: cover;
+
+  @include g.mq(lg) {
+    top: 80%;
+    left: 56%;
+  }
+
+  @include g.mq(ls) {
+    top: 64%;
+    left: 64%;
+  }
+
+  @include g.mq(ml) {
+    top: 52%;
+    left: 50%;
+    width: 64%;
+    height: 48%;
+  }
+
+  @include g.mq(md) {
+    top: 100%;
+    left: 35%;
+  }
+
+  @include g.mq(ms) {
+    top: 75%;
+    left: 22%;
+  }
+
+  @include g.mq(sl) {
+    top: 100%;
+    left: 30%;
+  }
+
+  @include g.mq(sm) {
+    top: 155%;
+    left: 20%;
+  }
+}
+
+.fv__image_secondary {
+  position: absolute;
+  top: 108%;
+  left: 24%;
+  z-index: 1;
+  width: 300px;
+  height: 200px;
+  -o-object-fit: cover;
+  object-fit: cover;
+
+  @include g.mq(lg) {
+    top: 108%;
+    left: 24%;
+  }
+
+  @include g.mq(ls) {
+    top: 88%;
+    left: 32%;
+  }
+
+  @include g.mq(ml) {
+    top: 64%;
+    left: 30%;
+    width: 40%;
+    height: auto;
+  }
+
+  @include g.mq(md) {
+    top: 110%;
+    left: 15%;
+  }
+
+  @include g.mq(ms) {
+    top: 88%;
+    left: 5%;
+  }
+
+  @include g.mq(sl) {
+    top: 110%;
+    left: 12%;
+  }
+
+  @include g.mq(sm) {
+    top: 164%;
+    left: 2%;
+  }
+}

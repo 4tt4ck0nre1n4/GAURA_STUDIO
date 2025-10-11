@@ -1,0 +1,95 @@
+@use "../global" as g;
+
+// thanks.html
+.thanks_page {
+  position: relative;
+  z-index: 0;
+  background: g.$main_gradation;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.thanks {
+  width: 100%;
+  height: 100vh;
+  padding-top: 48px;
+}
+
+.thanks__wrapper {
+  $size: 606px;
+
+  width: 100%;
+  max-width: $size;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include g.mq(sl) {
+    $size: 480px;
+
+    max-width: $size;
+  }
+
+  @include g.mq(sm) {
+    $size: 350px;
+
+    max-width: $size;
+  }
+}
+
+.thanks__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 250px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background-color: g.$mainColor;
+  border-radius: g.$radius_ver10;
+
+  @include g.mq(sm) {
+    height: auto;
+    padding: 40px 32px;
+  }
+
+  .thanks__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.thanks__heading_secondary {
+  margin-top: 10px;
+}
+
+.thanks__text {
+  color: g.$title_subColor;
+  text-align: center;
+}
+
+.thanks__imageInner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  margin-top: 32px;
+
+  .thanks__image {
+    position: absolute;
+    top: 20%;
+    left: 28%;
+    z-index: 1;
+    -o-object-fit: cover;
+    object-fit: cover;
+
+    @include g.mq(sl) {
+      top: 20%;
+      left: 20%;
+    }
+
+    @include g.mq(sm) {
+      top: 15%;
+      left: 15%;
+    }
+  }
+}

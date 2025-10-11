@@ -1,0 +1,501 @@
+@use "../global" as g;
+
+// section "features"
+.features {
+  padding-top: 94px;
+  padding-bottom: 150px;
+  background-color: g.$mainColor;
+
+  @include g.mq(lg) {
+    padding-top: 72px;
+    padding-bottom: 120px;
+  }
+
+  @include g.mq(md) {
+    padding-bottom: 72px;
+  }
+
+  @include g.mq(sm) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+@mixin f-mq($breakpoint: f-lg) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+$breakpoints: (
+  // 'ss': 'screen and (max-width: 320px)',
+  // 'sm': 'screen and (max-width: 425px)',
+  // 'sl': 'screen and (max-width: 550px)',
+  // 'ms': 'screen and (max-width: 640px), print',
+  // 'md': 'screen and (max-width: 769px), print',
+  // 'mm': 'screen and (max-width: 829px), print',
+  // 'ml': 'screen and (max-width: 950px), print',
+  "mx": "screen and (max-width: 1024px), print",
+  // 'ls': 'screen and (max-width: 1080px), print',
+  "f-lg": "screen and (max-width: 1100px), print",
+  // 'lx': 'screen and (max-width: 1280px), print',
+  // 'xl': 'screen and (max-width: 1480px), print',
+   // 'xx': 'screen and (max-width: 1780px), print'
+) !default;
+
+.features__wrapper {
+  $size: 1100px;
+
+  // $size: 1024px;
+  width: 100%;
+  max-width: $size;
+  margin-right: auto;
+  margin-left: auto;
+
+  // padding-right: 16px;
+  // padding-left: 16px;
+
+  @include f-mq(f-lg) {
+    $size: 1024px;
+
+    max-width: $size;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  @include g.mq(mx) {
+    $size: 950px;
+
+    max-width: $size;
+  }
+
+  @include g.mq(ml) {
+    $size: 829px;
+
+    max-width: $size;
+  }
+
+  @include g.mq(mm) {
+    $size: 769px;
+
+    max-width: $size;
+  }
+
+  @include g.mq(md) {
+    $size: 640px;
+
+    max-width: $size;
+  }
+
+  @include g.mq(ms) {
+    $size: 640px;
+
+    max-width: $size;
+  }
+
+  @include g.mq(sl) {
+    $size: 640px;
+
+    max-width: $size;
+  }
+
+  @include g.mq(sm) {
+    $size: 350px;
+
+    max-width: $size;
+  }
+
+  @include g.mq(ss) {
+    $size: 320px;
+
+    max-width: $size;
+  }
+}
+
+.features__inner {
+  display: flex;
+  flex-direction: column;
+}
+
+// 見出し1
+.features__inner:nth-child(2) {
+  margin-top: 56px;
+
+  @include g.mq(mm) {
+    margin-top: 48px;
+  }
+
+  @include g.mq(md) {
+    margin-top: 40px;
+  }
+
+  @include g.mq(sm) {
+    margin-top: 40px;
+  }
+}
+
+.features__inner:nth-child(2) {
+  .features__header {
+    br {
+      display: none;
+
+      @include g.mq(md) {
+        display: block;
+      }
+    }
+  }
+}
+
+// 見出し2
+.features__inner:nth-child(3) {
+  margin-top: 84px;
+
+  @include g.mq(mm) {
+    margin-top: 48px;
+  }
+
+  @include g.mq(md) {
+    margin-top: 40px;
+  }
+
+  @include g.mq(sm) {
+    margin-top: 40px;
+  }
+}
+
+// 見出し3
+.features__inner:nth-child(4) {
+  margin-top: 134px;
+
+  @include g.mq(mm) {
+    margin-top: 48px;
+  }
+
+  @include g.mq(md) {
+    margin-top: 40px;
+  }
+
+  @include g.mq(sm) {
+    margin-top: 40px;
+  }
+}
+
+.features__inner:nth-child(4) {
+  .features__header {
+    br {
+      display: none;
+
+      @include g.mq(md) {
+        display: block;
+      }
+    }
+  }
+}
+
+// contents
+.features__contents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 48px;
+
+  @include g.mq(mm) {
+    margin-top: 40px;
+  }
+
+  @include g.mq(md) {
+    flex-direction: column;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include g.mq(sm) {
+    margin-top: 40px;
+  }
+}
+
+// textInner
+.features__inner {
+  .features__textInner {
+    $size: 1100px;
+
+    // $size: 1024px;
+    $ml: 88px;
+
+    width: $size - (480px + $ml);
+
+    // margin-left: 88px;
+
+    @include f-mq(f-lg) {
+      $size: 1024px;
+      $ml: 24px;
+
+      width: $size - (440px + $ml);
+
+      // margin-left: 16px;
+    }
+
+    // @include g.mq(ls) {
+    //   $size: 1024px;
+    //   $ml: 16px;
+    //   width: $size - (480px + $ml );
+    // }
+
+    @include g.mq(mx) {
+      $size: 950px;
+      $ml: 16px;
+
+      width: $size - (360px + $ml);
+    }
+
+    @include g.mq(ml) {
+      $size: 830px;
+      $ml: 16px;
+
+      width: $size - (360px + $ml);
+    }
+  }
+}
+
+// contents
+// textInner 1
+.features__inner:nth-child(2) {
+  .features__textInner {
+    padding-top: 18px;
+    padding-right: 2px;
+    padding-bottom: 16px;
+
+    @include f-mq(f-lg) {
+      margin-left: 24px;
+    }
+
+    @include g.mq(ml) {
+      width: 50%;
+      padding-top: 16px;
+      padding-right: 24px;
+      padding-left: 24px;
+    }
+
+    @include g.mq(mm) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    @include g.mq(md) {
+      width: 100%;
+      padding: 40px 16px;
+      margin-left: 0;
+      text-align: left;
+    }
+
+    @include g.mq(sm) {
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+  }
+}
+
+// textInner 2
+.features__inner:nth-child(3) {
+  .features__textInner {
+    padding-top: 5px;
+
+    @include f-mq(f-lg) {
+      margin-right: 24px;
+    }
+
+    @include g.mq(ml) {
+      width: 50%;
+      padding: 16px;
+    }
+
+    @include g.mq(mm) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    @include g.mq(md) {
+      width: 100%;
+      padding: 40px 16px;
+      margin-right: 0;
+      text-align: left;
+    }
+
+    @include g.mq(sm) {
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+  }
+}
+
+// textInner 3
+.features__inner:nth-child(4) {
+  .features__textInner {
+    padding-top: 28px;
+
+    @include f-mq(f-lg) {
+      margin-left: 24px;
+    }
+
+    @include g.mq(ml) {
+      width: 50%;
+      padding: 16px;
+    }
+
+    @include g.mq(mm) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    @include g.mq(md) {
+      width: 100%;
+      padding: 40px 16px;
+      margin-left: 0;
+      text-align: left;
+    }
+
+    @include g.mq(sm) {
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+  }
+}
+
+// 特徴２ 見出し
+.features__headingText {
+  .headingText__br {
+    display: none;
+
+    @include f-mq(f-lg) {
+      display: block;
+    }
+  }
+}
+
+// text
+.features__text {
+  font-weight: 700;
+  line-height: 2;
+  color: g.$textColor;
+  text-align: justify;
+  letter-spacing: 0.04em;
+
+  @include g.mq(ml) {
+    font-size: g.$f15;
+    line-height: 1.7;
+  }
+}
+
+// text 1
+.features__inner:nth-child(2) {
+  .features__text {
+    margin-top: 38px;
+
+    @include g.mq(ml) {
+      margin-top: 16px;
+      font-size: g.$f15;
+      line-height: 1.7;
+    }
+  }
+}
+
+// text 2
+.features__inner:nth-child(3) {
+  .features__text {
+    margin-top: 32px;
+  }
+}
+
+.features__inner:nth-child(3) {
+  .features__text {
+    br {
+      display: block;
+
+      @include g.mq(ml) {
+        display: none;
+      }
+    }
+  }
+}
+
+// text 3
+.features__inner:nth-child(4) {
+  .features__text {
+    margin-top: 25px;
+    margin-left: 4px;
+
+    @include g.mq(ml) {
+      margin-top: 32px;
+      margin-left: 0;
+    }
+
+    @include g.mq(mm) {
+      margin-top: 0;
+      margin-left: 0;
+    }
+
+    @include g.mq(md) {
+      margin-top: 32px;
+      margin-left: 0;
+    }
+  }
+}
+
+.firstLetter {
+  display: inline-block;
+}
+
+.firstLetter::first-letter {
+  color: g.$title_subColor;
+}
+
+// contents imageInner
+.features__imageInner {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+// imageInner 1
+.features__inner:nth-child(2) {
+  .features__imageInner {
+    @include g.mq(md) {
+      padding-left: 0;
+    }
+  }
+}
+
+// imageInner 2
+.features__inner:nth-child(3) {
+  .features__imageInner {
+    padding-top: 10px;
+    padding-right: 2px;
+
+    @include g.mq(md) {
+      order: -1;
+    }
+
+    @include g.mq(sm) {
+      padding-top: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+// imageInner 3
+.features__inner:nth-child(4) {
+  .features__imageInner {
+    padding-top: 10px;
+
+    @include g.mq(ml) {
+      padding-top: 0;
+    }
+  }
+}
+
+.features__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}

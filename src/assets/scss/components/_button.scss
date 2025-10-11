@@ -1,0 +1,145 @@
+@use "../global" as g;
+
+// header 資料請求ボタン
+.c-button {
+  z-index: 10;
+  display: inline-block;
+  max-width: 156px;
+  overflow: hidden;
+  border-radius: g.$radius_ver10;
+  transition: 0.4s;
+  perspective: 2000px;
+  perspective-origin: 50% 50%;
+
+  @include g.mq(ml) {
+    font-size: g.$f14;
+  }
+}
+
+.button__type-a {
+  margin-left: auto;
+
+  @include g.mq(md) {
+    margin-right: auto;
+  }
+}
+
+.button__type-a {
+  .c-button {
+    @include g.mq(md) {
+      margin-right: auto;
+
+      @include g.visually-hidden;
+    }
+
+    @include g.mq(sm) {
+      position: static;
+    }
+  }
+}
+
+.c-button {
+  .button__text {
+    position: relative;
+    display: inline-block;
+    max-width: 156px;
+    padding: 10px 36px 10px 26px;
+    font-size: g.$f14;
+    color: g.$mainColor;
+    white-space: nowrap;
+    background: g.$main_gradation;
+    border-radius: g.$radius_ver10;
+    transition: 0.4s;
+    transform-origin: 50% 0%;
+    transform-style: preserve-3d;
+
+    @include g.box-shadow;
+  }
+}
+
+.c-button {
+  .button__text::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    padding: 10px 36px 10px 26px;
+    content: attr(data-text);
+    background: g.$sub_gradation;
+    border-radius: g.$radius_ver10;
+    transform: translate3d(0, 100%, 0) rotateX(-90deg);
+    transform-origin: 50% 0%;
+
+    @include g.box-shadow;
+  }
+}
+
+.c-button:hover {
+  .button__text {
+    border-radius: g.$radius_ver10;
+    transform: translate3d(0, 0, 60px) rotateX(90deg);
+  }
+}
+
+// section "fv" クリエイター募集ボタン
+.button__type-b {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 32px;
+  margin-right: 62px;
+  margin-bottom: 32px;
+
+  @include g.mq(lg) {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  @include g.mq(ls) {
+    margin-top: 24px;
+    margin-bottom: 40px;
+  }
+
+  @include g.mq(ml) {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  @include g.mq(md) {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  @include g.mq(sm) {
+    justify-content: center;
+    margin-top: 16px;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+}
+
+.button__type-b {
+  .c-button {
+    z-index: 200;
+  }
+}
+
+// section "contact" 送信ボタン
+.button__submit {
+  @include g.button;
+
+  padding: 12px 50px;
+}
+
+.button__type-c {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 34px;
+
+  @include g.mq(ml) {
+    margin-bottom: 32px;
+  }
+}
+
+#js-submit__button {
+  opacity: 0.5;
+}

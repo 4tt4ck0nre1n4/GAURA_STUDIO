@@ -1,0 +1,33 @@
+// background-image
+
+// section "mainVisual" 背景
+$background_image: "/assets/images/bg01.png";
+
+// background-image: url("#{$background_image}");
+$background_image2x: "/assets/images/bg01@2x.png";
+
+// background-image: url("#{$background_image2x}");
+
+// section "recruit" 背景
+$background_image__second: "/assets/images/bg02.png";
+$background_image2x__second: "/assets/images/bg02@2x.png";
+
+// section "blog" 背景
+$background_image__third: "/assets/images/bg03.png";
+$background_image2x__third: "/assets/images/bg03@2x.png";
+
+// スマホサイズ navメニュー 背景
+$background_image__forth: "/assets/images/gaura-bg.png";
+$background_image2x__forth: "/assets/images/gaura-bg@2x.png";
+
+// 404ページ 背景
+$background_image__page404: "/assets/images/page404.jpg";
+$background_image2x__page404: "/assets/images/page404@2x.jpg";
+
+// section "contact" チェックボックス
+$check-box_image: "/assets/images/check-box.png";
+
+// background-image: url("#{$check-box_image}");
+$check-box_image2x: "/assets/images/check-box@2x.png";
+
+// background-image: url("#{$check-box_image2x}");

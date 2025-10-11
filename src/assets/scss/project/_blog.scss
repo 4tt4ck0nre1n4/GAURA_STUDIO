@@ -1,0 +1,273 @@
+@use "../global" as g;
+
+// section "blog"
+.blog {
+  @include g.background-image__third;
+
+  padding-top: 54px;
+  padding-bottom: 90px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+
+  @include g.mq(sm) {
+    padding-top: 48px;
+    padding-bottom: 64px;
+    background-position: center 70%;
+  }
+}
+
+.blog__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 54px;
+
+  @include g.mq(sm) {
+    margin-top: 48px;
+  }
+}
+
+// カード
+.blog__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: calc(33.3% - (30px * 2) / 3);
+  height: 387px;
+  overflow: hidden;
+  background-color: g.$mainColor;
+
+  @include g.box-shadow;
+
+  @include g.mq(ml) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin-top: 32px;
+    border-radius: g.$radius_ver10;
+  }
+
+  @include g.mq(mm) {
+    margin-top: 24px;
+  }
+
+  @include g.mq(md) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+  }
+}
+
+.blog__card {
+  .card__textInner {
+    height: 48%;
+
+    @include g.mq(ml) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 48%;
+      height: 100%;
+    }
+
+    @include g.mq(md) {
+      width: 100%;
+    }
+
+    @include g.mq(sm) {
+      margin-left: 0;
+    }
+  }
+}
+
+.blog__card:nth-child(1) {
+  .card__header {
+    padding-left: 18px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    // @include g.mq(mx) {
+    //   padding-left: 4px;
+    // }
+
+    @include g.mq(ml) {
+      padding-right: 0;
+      padding-bottom: 64px;
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    @include g.mq(md) {
+      // padding-right: 0;
+      padding-bottom: 0;
+      margin-bottom: 16px;
+    }
+
+    @include g.mq(sm) {
+      padding: 32px 16px;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.blog__card:nth-child(2) {
+  .card__header {
+    padding-left: 18px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    @include g.mq(ml) {
+      padding-right: 80px;
+      padding-right: 0;
+      padding-bottom: 64px;
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    @include g.mq(mm) {
+      padding-bottom: 32px;
+    }
+
+    @include g.mq(md) {
+      padding-top: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+
+    @include g.mq(sm) {
+      padding: 32px 16px;
+    }
+  }
+}
+
+.blog__card:nth-child(3) {
+  .card__header {
+    padding-left: 18px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    @include g.mq(mx) {
+      margin-bottom: 16px;
+    }
+
+    @include g.mq(ml) {
+      padding-bottom: 48px;
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    @include g.mq(mm) {
+      padding-bottom: 72px;
+    }
+
+    @include g.mq(md) {
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+
+    @include g.mq(sm) {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
+}
+
+.card__heading {
+  font-family: g.$f-f2;
+  font-size: g.$f18;
+  font-weight: 700;
+  line-height: 1.44;
+
+  @include g.mq(ml) {
+    font-size: g.$f20;
+  }
+}
+
+.card__text {
+  margin-top: 8px;
+  font-family: g.$f-f2;
+  font-size: g.$f16;
+  font-weight: 700;
+  line-height: 2;
+}
+
+.blog__card:nth-child(3) {
+  .card__text {
+    @include g.mq(mx) {
+      font-size: g.$f15;
+      line-height: 1.5;
+    }
+
+    @include g.mq(ml) {
+      font-size: g.$f16;
+    }
+  }
+}
+
+.card__footer {
+  @include g.mq(ml) {
+    position: absolute;
+    right: 8px;
+  }
+
+  @include g.mq(md) {
+    position: static;
+  }
+}
+
+.card__timeText {
+  padding-right: 32px;
+  font-family: g.$f-f2;
+  font-size: g.$f14;
+  font-weight: 400;
+  color: g.$text_subColor;
+  text-align: right;
+
+  @include g.mq(lg) {
+    padding-bottom: 32px;
+  }
+
+  @include g.mq(ml) {
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  @include g.mq(md) {
+    padding-bottom: 8px;
+    text-align: center;
+  }
+}
+
+.card__thumbnail {
+  order: -1;
+  aspect-ratio: 389 / 260;
+  overflow: hidden;
+
+  @include g.mq(ml) {
+    width: 50%;
+  }
+
+  @include g.mq(mm) {
+    width: 50%;
+  }
+
+  @include g.mq(md) {
+    width: 70%;
+  }
+
+  .card__image {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}

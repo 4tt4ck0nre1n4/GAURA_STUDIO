@@ -1,0 +1,232 @@
+@use "../global" as g;
+
+// タイトル
+
+// header ロゴ
+.header__logo {
+  margin-top: -4px;
+  margin-right: 4px;
+  font-family: g.$f-f1;
+  font-size: g.$f24;
+
+  @include g.mq(sm) {
+    margin-right: 16px;
+    font-size: g.$f22;
+  }
+}
+
+.header__logo_secondary {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: g.$f-f1;
+  font-size: g.$f22;
+
+  @include g.mq(sm) {
+    font-size: g.$f20;
+  }
+}
+
+// section "fv" タイトル
+.fv__title {
+  z-index: 1;
+  font-family: g.$f-f3;
+  font-size: g.$f28;
+  font-weight: 800;
+  line-height: 1.5;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+
+  @include g.mq(lg) {
+    font-size: g.$f24;
+    line-height: 1.5;
+  }
+
+  @include g.mq(mm) {
+    font-size: g.$f24;
+  }
+
+  @include g.mq(sl) {
+    font-size: g.$f20;
+  }
+}
+
+// section "recruit, faq, blog, works, contact" タイトル
+.section__titleInner {
+  padding-right: 22px;
+  padding-left: 18px;
+  margin-top: 2px;
+  font-weight: 700;
+  text-align: center;
+
+  @include g.mq(sm) {
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-top: 0;
+  }
+
+  .section__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .section__heading {
+    font-family: g.$f-f2;
+    font-size: g.$f28;
+
+    @include g.mq(ml) {
+      font-size: g.$f24;
+    }
+  }
+
+  // section "features, recruit, faq, blog, works, contact" 英語タイトル
+  .section__subHeading {
+    display: block;
+    font-family: g.$f-f1;
+    font-size: g.$f16;
+    color: g.$title_subColor;
+
+    @include g.mq(ml) {
+      font-size: g.$f14;
+    }
+  }
+
+  // section "features" 英語タイトル
+  .features__subHeading {
+    margin-top: 10px;
+    margin-left: -8px;
+  }
+
+  // section "recruit" 英語タイトル
+  .recruit__subHeading {
+    margin-top: 10px;
+    margin-left: -2px;
+  }
+
+  // section "faq" 英語タイトル
+  .faq__subHeading {
+    margin-top: 12px;
+    margin-left: 0;
+  }
+
+  // section "blog" 英語タイトル
+  .blog__subHeading {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+
+  // section "works" 英語タイトル
+  .works__subHeading {
+    margin-top: 8px;
+    margin-left: 4px;
+  }
+
+  // section "contact" 英語タイトル
+  .contact__subHeading {
+    margin-top: 6px;
+    margin-left: 8px;
+  }
+
+  // section "recruit" カラー変更
+  .recruit__subHeading_color {
+    color: g.$mainColor;
+  }
+
+  // section "contact" カラー変更
+  .contact__subHeading_color {
+    color: g.$mainColor;
+  }
+}
+
+// section "works" タイトル
+.section__titleInner {
+  .works__title {
+    font-family: g.$f-f1;
+    font-size: g.$f28;
+    white-space: nowrap;
+    background-color: g.$mainColor;
+
+    @include g.mq(sm) {
+      font-size: g.$f24;
+    }
+  }
+}
+
+// section "features" タイトル
+.section__titleInner {
+  .features__title {
+    font-family: g.$f-f1;
+    font-size: g.$f28;
+    white-space: nowrap;
+
+    @include g.mq(ml) {
+      font-size: g.$f24;
+    }
+
+    @include g.mq(sm) {
+      font-size: g.$f24;
+    }
+  }
+}
+
+// section "features" 特徴3タイトル
+.features__header {
+  font-family: g.$f-f3;
+  font-size: g.$f24;
+  text-align: center;
+
+  @include g.mq(ml) {
+    font-size: g.$f20;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f20;
+  }
+}
+
+// section "features" 特徴見出し
+.features__headingText {
+  font-size: g.$f24;
+
+  @include g.mq(ml) {
+    font-size: g.$f20;
+  }
+
+  @include g.mq(sm) {
+    font-size: g.$f20;
+  }
+}
+
+.features__headingText {
+  br {
+    display: none;
+
+    @include g.mq(ml) {
+      display: block;
+    }
+  }
+}
+
+// footer タイトル
+.footer__title {
+  font-family: g.$f-f1;
+  font-size: g.$f24;
+
+  @include g.mq(sm) {
+    font-size: g.$f22;
+  }
+}
+
+// thanksページ h1タイトル
+.thanks__title {
+  font-size: g.$f24;
+  text-align: center;
+}
+
+// thanksページ ロゴ
+.thanks_logoTitle {
+  margin-left: 10px;
+  font-family: g.$f-f1;
+  font-size: g.$f20;
+}

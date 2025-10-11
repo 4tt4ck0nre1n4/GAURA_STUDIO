@@ -1,0 +1,90 @@
+@use "../global" as g;
+
+// footer
+.footer {
+  padding-top: 40px;
+  padding-bottom: 96px;
+  background-color: g.$bg_footerColor;
+
+  @include g.mq(lg) {
+    padding-bottom: 72px;
+  }
+
+  @include g.mq(sm) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.footer__title_link {
+  display: block;
+  text-decoration: none;
+}
+
+.footer__title_link:hover {
+  text-decoration: none;
+}
+
+.footer__textInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 21px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: g.$f-f2;
+  font-weight: 700;
+
+  @include g.mq(md) {
+    font-size: g.$f14;
+  }
+
+  @include g.mq(sm) {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .footer__text_privacy {
+    padding-right: 10px;
+    padding-left: 34px;
+
+    @include g.mq(sm) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  .footer__text_law {
+    padding-left: 20px;
+
+    @include g.mq(sm) {
+      padding-left: 0;
+      margin-top: 16px;
+    }
+  }
+}
+
+.footer__link {
+  pointer-events: none;
+}
+
+.footer__copyright {
+  margin-top: 52px;
+  font-size: g.$f14;
+  font-weight: 700;
+  text-align: center;
+
+  @include g.mq(md) {
+    font-size: g.$f12;
+  }
+
+  @include g.mq(sm) {
+    margin-top: 40px;
+  }
+}
+
+.copyright__text {
+  font-family: g.$f-f1;
+  font-weight: 700;
+  text-transform: uppercase;
+}

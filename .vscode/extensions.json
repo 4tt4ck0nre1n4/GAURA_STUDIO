@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "editorconfig.editorconfig",
+    "ritwickdey.liveserver",
+    "ms-ceintl.vscode-language-pack-ja"
+  ]
+}

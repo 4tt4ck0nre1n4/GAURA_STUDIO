@@ -1,0 +1,156 @@
+@use "../global" as g;
+
+.page404 {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 40px;
+  font-family: g.$f-f2;
+  font-weight: 700;
+  color: g.$textColor;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include g.background-image__page404;
+
+  @include g.mq(md) {
+    padding-top: 48px;
+    background-position: 24%;
+  }
+
+  @include g.mq(sm) {
+    padding-top: 48px;
+    background-position: 28%;
+  }
+}
+
+.page404__inner {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 640px;
+  height: 320px;
+  margin-left: 320px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.7);
+
+  @include g.mq(xl) {
+    margin-left: 240px;
+  }
+
+  @include g.mq(lg) {
+    margin-left: 120px;
+  }
+
+  @include g.mq(ml) {
+    width: 480px;
+    height: 240px;
+    margin-left: 48px;
+  }
+
+  @include g.mq(md) {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    margin-left: 0;
+  }
+
+  @include g.mq(sm) {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 320px;
+    height: 240px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-left: 0;
+  }
+}
+
+.page404__inner {
+  .page404__title {
+    font-size: g.$f38;
+    color: g.$title_subColor;
+    white-space: nowrap;
+
+    @include g.mq(ml) {
+      font-size: g.$f28;
+    }
+
+    @include g.mq(sm) {
+      font-size: g.$f24;
+    }
+  }
+
+  .page404__subTitle {
+    margin-top: 32px;
+    font-size: g.$f32;
+    white-space: nowrap;
+
+    @include g.mq(ml) {
+      font-size: g.$f22;
+    }
+
+    @include g.mq(md) {
+      font-size: g.$f20;
+    }
+
+    @include g.mq(sm) {
+      margin-top: 16px;
+    }
+  }
+
+  .page404__text {
+    margin-top: 32px;
+
+    @include g.mq(sm) {
+      margin-top: 16px;
+    }
+  }
+
+  .page404__link {
+    display: block;
+    font-size: g.$f24;
+    color: g.$title_subColor;
+    text-decoration: underline;
+
+    @include g.mq(ml) {
+      font-size: g.$f18;
+    }
+
+    @include g.mq(sm) {
+      font-size: g.$f16;
+    }
+  }
+}
+
+.page404__title {
+  br {
+    display: none;
+
+    @include g.mq(sm) {
+      display: block;
+    }
+  }
+}
+
+.page404__subTitle {
+  br {
+    display: none;
+
+    @include g.mq(sm) {
+      display: block;
+    }
+  }
+}
+
+.page404__link:focus,
+.page404__link:hover {
+  color: g.$bg_formColor;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

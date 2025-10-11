@@ -1,0 +1,85 @@
+@use "../global" as g;
+
+// header
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  width: 100%;
+  height: 94px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background-color: g.$mainColor;
+
+  @include g.box-shadow;
+
+  @include g.mq(lg) {
+    height: auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  @include g.mq(ml) {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+.header__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  @include g.mq(ml) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  @include g.mq(md) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include g.mq(sm) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .header__logoInner {
+    display: flex;
+    align-items: center;
+    margin-right: 137px;
+
+    @include g.mq(ml) {
+      margin-right: 108px;
+    }
+
+    @include g.mq(mm) {
+      margin-right: 24px;
+    }
+
+    @include g.mq(md) {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @include g.mq(sm) {
+      padding-right: 8px;
+    }
+  }
+}
+
+.header__logoInner {
+  .logo__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    text-decoration: none;
+  }
+}

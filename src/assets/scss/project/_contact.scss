@@ -1,0 +1,188 @@
+@use "../global" as g;
+
+// section "contact"
+.contact {
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 72px;
+  color: g.$mainColor;
+  background: g.$main_gradation;
+
+  @include g.mq(sm) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+.contact__text {
+  padding-right: 22px;
+  padding-left: 22px;
+  margin-top: 36px;
+  font-family: g.$f-f2;
+  text-align: center;
+
+  @include g.mq(md) {
+    font-size: g.$f15;
+  }
+
+  @include g.mq(sm) {
+    padding-right: 32px;
+    padding-left: 32px;
+    margin-top: 40px;
+  }
+}
+
+.contact__text {
+  br {
+    display: block;
+
+    @include g.mq(sm) {
+      display: none;
+    }
+  }
+}
+
+// form
+.form__inner {
+  width: 100%;
+  height: 689px;
+  padding: 8px 62px 34px;
+  margin-top: 42px;
+  font-family: g.$f-f2;
+  font-weight: 700;
+  color: g.$textColor;
+  background-color: g.$mainColor;
+
+  @include g.mq(lg) {
+    height: auto;
+  }
+
+  @include g.mq(md) {
+    font-size: g.$f15;
+  }
+
+  @include g.mq(sm) {
+    padding: 40px 32px;
+    margin-top: 32px;
+  }
+}
+
+.form__box {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.label__name {
+  margin-top: 26px;
+
+  @include g.mq(ml) {
+    margin-top: 40px;
+  }
+}
+
+.label__email {
+  margin-top: 26px;
+
+  @include g.mq(ml) {
+    margin-top: 40px;
+  }
+}
+
+.label__textarea {
+  margin-top: 21px;
+
+  @include g.mq(ml) {
+    margin-top: 40px;
+  }
+}
+
+input[type="text"] {
+  width: 499px;
+  height: 43px;
+  overflow: hidden;
+  background-color: g.$bg_subColor;
+  border-radius: g.$radius_ver3;
+
+  @include g.mq(lg) {
+    width: 100%;
+  }
+}
+
+input[type="email"] {
+  width: 499px;
+  height: 43px;
+  overflow: hidden;
+  background-color: g.$bg_subColor;
+  border-radius: g.$radius_ver3;
+
+  @include g.mq(lg) {
+    width: 100%;
+  }
+}
+
+.input__text {
+  margin-top: 40px;
+
+  @include g.mq(ml) {
+    margin-top: 32px;
+  }
+}
+
+.input__email {
+  margin-top: 40px;
+
+  @include g.mq(ml) {
+    margin-top: 32px;
+  }
+}
+
+.textarea {
+  width: 783px;
+  height: 179px;
+  margin-top: 40px;
+  overflow: hidden;
+  resize: none;
+  background-color: g.$bg_subColor;
+  border-radius: g.$radius_ver3;
+
+  @include g.mq(lg) {
+    width: 100%;
+  }
+
+  @include g.mq(ml) {
+    margin-top: 32px;
+  }
+}
+
+.label__required {
+  max-width: 60px;
+  padding: 4px 16px;
+  margin-left: 20px;
+  font-size: g.$f14;
+  color: g.$mainColor;
+  background-color: g.$bg_formColor;
+  border-radius: g.$radius_ver10;
+
+  @include g.mq(md) {
+    margin-left: 8px;
+  }
+
+  @include g.mq(sl) {
+    font-size: g.$f12;
+  }
+}
+
+.label__required_secondary {
+  @extend .label__required;
+
+  margin-left: 16px;
+
+  @include g.mq(md) {
+    margin-left: 8px;
+  }
+}

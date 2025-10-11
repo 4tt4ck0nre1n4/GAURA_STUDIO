@@ -1,0 +1,70 @@
+@use "../global" as g;
+
+// checkbox 自作
+.form__agree {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+  margin-bottom: 28px;
+  margin-left: 25px;
+
+  @include g.mq(ml) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  @include g.mq(sm) {
+    padding-right: 8px;
+  }
+}
+
+.agree__text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.label__checkBox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.label__checkBox input[type="checkbox"] + .agree__text::before {
+  position: absolute;
+  top: 2px;
+  left: -28px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  content: "";
+
+  @include g.checkbox-image;
+}
+
+.label__checkBox input[type="checkbox"] + .agree__text::after {
+  position: absolute;
+  top: 2px;
+  left: -28px;
+  z-index: 5;
+  width: 18px;
+  height: 10px;
+  content: "";
+  border-bottom: g.$textColor 3px solid;
+  border-left: g.$textColor 3px solid;
+  opacity: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.label__checkBox input[type="checkbox"]:focus + .agree__text::before {
+  outline: #ff7f0e 3px thick;
+}
+
+.label__checkBox input[type="checkbox"]:checked + .agree_text::after {
+  opacity: 1;
+}
+
+.button[disabled] {
+  cursor: not-allowed;
+}

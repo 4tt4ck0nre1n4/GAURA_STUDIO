@@ -1,0 +1,153 @@
+@use "../global" as g;
+
+// section "works"
+.works {
+  padding-top: 54px;
+  padding-bottom: 92px;
+
+  @include g.mq(xl) {
+    padding-top: 88px;
+    padding-bottom: 48px;
+  }
+
+  @include g.mq(md) {
+    padding-top: 64px;
+    padding-bottom: 48px;
+  }
+
+  @include g.mq(sm) {
+    padding-top: 176px;
+    padding-bottom: 48px;
+  }
+}
+
+.works__wrapper {
+  @include g.mq(sm) {
+    position: relative;
+    background-color: g.$mainColor;
+  }
+}
+
+$swiper_breakpoints: (
+  "sp_swiper": "screen and (max-width: 480px)",
+  "tab_swiper": "screen and (max-width: 501px)",
+);
+
+@mixin swiper_mq($swiper_breakpoint: tab_swiper) {
+  @media #{map-get($swiper_breakpoints, $swiper_breakpoint)} {
+    @content;
+  }
+}
+
+.swiper {
+  height: 406px;
+  margin-top: 68px;
+
+  @include swiper_mq(tab_swiper) {
+    height: auto;
+    margin-top: 48px;
+  }
+
+  @include swiper_mq(sp_swiper) {
+    margin-top: 40px;
+  }
+}
+
+.swiper-slide {
+  width: 322px;
+  height: 406px;
+  overflow: hidden;
+  background-color: g.$mainColor;
+  border-radius: g.$radius_ver8;
+
+  @include g.border-style(g.$border_subColor);
+
+  @include swiper_mq(tab_swiper) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 65.53%;
+
+  @include swiper_mq(tab_swiper) {
+    padding-top: 0;
+  }
+}
+
+.swiper-slide_image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  order: -1;
+  margin: 0;
+
+  @include swiper_mq(tab_swiper) {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.works__image {
+  width: 100%;
+  aspect-ratio: 322 / 210;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.swiper-slide_textHeader {
+  padding-top: 32px;
+  padding-left: 18px;
+
+  @include swiper_mq(tab_swiper) {
+    padding-top: 32px;
+  }
+
+  @include swiper_mq(sp_swiper) {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
+
+.swiper-slide_heading {
+  font-family: g.$f-f2;
+  font-size: g.$f16;
+  font-weight: 700;
+  line-height: 1.8;
+
+  @include g.mq(md) {
+    font-size: g.$f15;
+  }
+}
+
+.swiper-slide_textFooter {
+  padding-bottom: 16px;
+  padding-left: 18px;
+  margin-top: 28px;
+
+  @include swiper_mq(tab_swiper) {
+    padding-bottom: 32px;
+    margin-top: 32px;
+  }
+
+  @include swiper_mq(sp_swiper) {
+    padding-left: 8px;
+  }
+}
+
+.swiper-slide_text {
+  font-family: g.$f-f2;
+  font-size: g.$f14;
+  font-weight: 700;
+  line-height: 1.5;
+
+  @include g.mq(ms) {
+    font-size: g.$f12;
+  }
+}

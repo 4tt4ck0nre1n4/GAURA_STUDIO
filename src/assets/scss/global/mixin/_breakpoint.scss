@@ -1,0 +1,23 @@
+@use "./../variables" as v;
+
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+$breakpoints: (
+  "ss": "screen and (max-width: 350px)",
+  "sm": "screen and (max-width: 430px)",
+  "sl": "screen and (max-width: 550px)",
+  "ms": "screen and (max-width: 640px), print",
+  "md": "screen and (max-width: 769px), print",
+  "mm": "screen and (max-width: 829px), print",
+  "ml": "screen and (max-width: 950px), print",
+  "mx": "screen and (max-width: 1024px), print",
+  "ls": "screen and (max-width: 1080px), print",
+  "lg": "screen and (max-width: 1200px), print",
+  "lx": "screen and (max-width: 1280px), print",
+  "xl": "screen and (max-width: 1480px), print",
+  "xx": "screen and (max-width: 1780px), print",
+) !default;

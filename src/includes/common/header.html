@@ -1,0 +1,68 @@
+<header id="header" class="header">
+  <div class="wrapper">
+    <div class="header__inner">
+      <!-- ロゴ -->
+      <div class="header__logoInner">
+        <a class="logo__link" href="index.html" aria-label="GAURA STUDIOのイメージロゴ">
+          <img
+            class="logo__image"
+            src="/assets/images/logo.png"
+            srcset="/assets/images/logo.png 1x, /assets/images/logo@2x.png 2x"
+            width="47"
+            height="47"
+            alt=""
+            decoding="async"
+          />
+          <h1 class="header__logo">
+            GAURA
+            <span class="header__logo_secondary">STUDIO</span>
+          </h1>
+        </a>
+      </div>
+      <!-- /.ly_header__logo -->
+      <!-- ハンバーガーメニューボタン -->
+      <button
+        id="js-button__hamburger"
+        class="button__hamburger hamburger"
+        type="button"
+        aria-label="メニュー"
+        aria-controls="js-header__nav"
+        aria-expanded="false"
+      >
+        <span id="js-hamburger__line"></span>
+        <span id="js-hamburger__text"></span>
+      </button>
+      <!-- navメニュー, ハンバーガーメニューリスト -->
+      <div id="js-hamburger__overlay" class="overlay"></div>
+      <!-- /.overlay -->
+      <nav id="js-header__nav" class="header__nav" aria-label="global-menu" aria-hidden="true">
+        <ul class="header__menu">
+          <li class="header__menu_item">
+            <a class="header__menu_link js-features" href="#features" aria-label="特徴についての詳細はこちらから">
+              特徴
+            </a>
+          </li>
+          <li class="header__menu_item">
+            <a class="header__menu_link js-recruit" href="#recruit" aria-label="求人募集についての詳細はこちらから">
+              求人募集
+            </a>
+          </li>
+          <li class="header__menu_item">
+            <a class="header__menu_link js-faq" href="#faq" aria-label="よくある質問はこちらから">よくある質問</a>
+          </li>
+        </ul>
+        <div id="js-focus_trap" tabindex="0"></div>
+        <!-- /.js-focus_trap -->
+      </nav>
+      <!-- 資料請求ボタン -->
+      <div class="button__type-a">
+        <button id="js-button__type-a" class="c-button js-button" type="button" aria-label="資料請求ボタン">
+          <span class="button__text" data-text="資料請求はこちら">資料請求はこちら</span>
+        </button>
+      </div>
+      <!-- /.button__type-a -->
+    </div>
+    <!-- /.header__inner -->
+  </div>
+  <!-- /.wrapper -->
+</header>

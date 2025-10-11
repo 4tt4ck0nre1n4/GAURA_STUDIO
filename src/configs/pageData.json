@@ -1,0 +1,60 @@
+{
+  "site": {
+    "name": "GAURA STUDIO",
+    "name_separate": " | ",
+    "description": "アートの新しい次元を探求するGAURAの挑戦。私たちはAIをクリエイティビティのパートナーとして、テクノロジーとアーティストの感性を融合させ、これからも驚くべき作品を生み出します。あなたのアートの未来を、私たちと共に創造しませんか？",
+    "domain": "hibari-konaweb.com/gaura_studio",
+    "ogp": {
+      "type": "website",
+      "locale": "ja_JP",
+      "image": "hibari-konaweb.com/gaura_studio/dist/images/gaura_studio.png"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "username": "@example"
+    }
+  },
+  "image": {
+    "optimization": {
+      "png": {
+        "quality": 80
+      },
+      "jpeg": {
+        "quality": 80
+      },
+      "jpg": {
+        "quality": 80
+      },
+      "webp": {
+        "quality": 80,
+        "lossless": true
+      }
+    }
+  },
+  "/index.html": {
+    "pageTitle": "GAURA STUDIO",
+    "description": "アートの新しい次元を探求するGAURAの挑戦。私たちはAIをクリエイティビティのパートナーとして、テクノロジーとアーティストの感性を融合させ、これからも驚くべき作品を生み出します。あなたのアートの未来を、私たちと共に創造しませんか？"
+  },
+  "/thanks.html": {
+    "pageTitle": "Thanks-page",
+    "description": "お問い合わせ誠にありがとうございます。",
+    "ogp": {
+      "type": "article",
+      "image": "hibari-konaweb.com/gaura_studio/dist/images/gaura_studio.png"
+    },
+    "twitter": {
+      "card": "summary_large_image"
+    }
+  },
+  "/404.html": {
+    "pageTitle": "404",
+    "description": "ページが見つかりませんでした",
+    "ogp": {
+      "type": "article",
+      "image": "hibari-konaweb.com/gaura_studio/dist/images/gaura_studio.png"
+    },
+    "twitter": {
+      "card": "summary_large_image"
+    }
+  }
+}

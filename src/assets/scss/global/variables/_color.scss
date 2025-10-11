@@ -1,0 +1,17 @@
+// color
+
+$mainColor: #fff;
+$textColor: #333;
+$text_subColor: #444; // .card__timeText
+$title_subColor: #ab0f50;
+$bg_subColor: #f2f2f2; // section"contact"
+$bg_formColor: #00005d;
+$bg_footerColor: #f8f8f8;
+$border_color: #e5e5e5;
+$border_subColor: #ddd;
+$border_boxColor: #707070;
+$gradation_ver1: #ab0f50;
+$gradation_ver2: #402717;
+$gradation_ver3: #00005d;
+$main_gradation: linear-gradient(90deg, #{$gradation_ver1} 0%, #{$gradation_ver2} 100%);
+$sub_gradation: linear-gradient(90deg, #{$gradation_ver3} 0%, #{$gradation_ver1} 100%);

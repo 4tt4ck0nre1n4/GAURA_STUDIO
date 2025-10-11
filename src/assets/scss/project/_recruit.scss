@@ -1,0 +1,326 @@
+@use "../global" as g;
+
+// section "recruit"
+.recruit {
+  padding-top: 52px;
+  padding-bottom: 70px;
+  color: g.$mainColor;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+
+  @include g.background-image__second;
+
+  @include g.mq(sm) {
+    padding-top: 64px;
+    padding-bottom: 48px;
+    background-position: center 40%;
+  }
+}
+
+.recruit__wrapper {
+  $size: 926px;
+
+  width: 100%;
+  max-width: $size;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include g.mq(mm) {
+    $size: 769px;
+
+    max-width: $size;
+  }
+
+  @include g.mq(md) {
+    $size: 640px;
+
+    max-width: $size;
+  }
+
+  @include g.mq(sl) {
+    $size: 480px;
+
+    max-width: $size;
+  }
+
+  @include g.mq(sm) {
+    $size: 350px;
+
+    max-width: $size;
+  }
+
+  .table {
+    width: 100%;
+    max-width: 926px;
+    height: 100px;
+    padding: 0;
+    margin-top: 68px;
+    table-layout: auto;
+    border-collapse: collapse;
+    background-color: g.$mainColor;
+
+    @include g.box-shadow;
+
+    @include g.mq(md) {
+      max-width: 640px;
+      margin-top: 40px;
+    }
+
+    @include g.mq(sm) {
+      max-width: 350px;
+      margin-top: 40px;
+    }
+  }
+}
+
+.table {
+  .table__caption {
+    @include g.visually-hidden;
+  }
+}
+
+.table {
+  .table__row {
+    @include g.border-style;
+  }
+}
+
+.table {
+  .table__row {
+    .table__head {
+      @include g.font-style;
+
+      width: 27%;
+      color: g.$textColor;
+      text-align: left;
+      white-space: nowrap;
+      vertical-align: middle;
+      border-right: g.$border_color 1px solid;
+
+      @include g.mq(ml) {
+        font-size: g.$f15;
+      }
+
+      @include g.mq(md) {
+        display: block;
+        width: 100%;
+        background-color: g.$border_color;
+        border-right: none;
+        border-bottom: g.$border_color 1px solid;
+      }
+    }
+  }
+}
+
+.head__first {
+  padding: 37px 33px 36px 20px;
+
+  @include g.mq(md) {
+    display: block;
+    width: 100%;
+    padding: 24px;
+  }
+
+  @include g.mq(sm) {
+    padding: 16px;
+  }
+}
+
+.head__second {
+  padding: 42px 33px 36px 20px;
+
+  @include g.mq(md) {
+    display: block;
+    width: 100%;
+    padding: 24px;
+  }
+
+  @include g.mq(sm) {
+    padding: 16px;
+  }
+}
+
+.head__third {
+  padding: 34px 33px 36px 20px;
+
+  @include g.mq(md) {
+    display: block;
+    width: 100%;
+    padding: 24px;
+  }
+
+  @include g.mq(sm) {
+    padding: 16px;
+  }
+}
+
+.head__last {
+  padding: 32px 33px 36px 20px;
+
+  @include g.mq(md) {
+    display: block;
+    width: 100%;
+    padding: 24px;
+  }
+
+  @include g.mq(sm) {
+    padding: 16px;
+  }
+}
+
+.table {
+  .table__row {
+    .table__data {
+      @include g.font-style;
+
+      width: 73%;
+      color: g.$textColor;
+      text-align: left;
+      white-space: nowrap;
+      vertical-align: middle;
+
+      @include g.mq(ml) {
+        font-size: g.$f15;
+        line-height: 1.8;
+      }
+
+      @include g.mq(md) {
+        display: block;
+        width: 100%;
+      }
+
+      @include g.mq(md) {
+        white-space: normal;
+      }
+    }
+  }
+}
+
+.table {
+  .table__row {
+    .data__first {
+      padding: 36px 0 36px 32px;
+
+      @include g.mq(md) {
+        display: block;
+        width: 100%;
+        padding: 24px;
+      }
+
+      @include g.mq(sm) {
+        padding: 16px;
+      }
+    }
+  }
+}
+
+.data__first {
+  .data__br {
+    display: none;
+
+    @include g.mq(ms) {
+      display: block;
+    }
+
+    @include g.mq(sm) {
+      display: none;
+    }
+  }
+}
+
+.table {
+  .table__row {
+    .data__second {
+      padding: 42px 0 36px 32px;
+
+      @include g.mq(md) {
+        display: block;
+        width: 100%;
+        padding: 24px;
+      }
+
+      @include g.mq(sm) {
+        padding: 16px;
+      }
+    }
+  }
+}
+
+.data__second {
+  .data__br {
+    display: none;
+
+    @include g.mq(ms) {
+      display: block;
+    }
+
+    @include g.mq(sm) {
+      display: none;
+    }
+  }
+}
+
+.table {
+  .table__row {
+    .data__third {
+      padding: 34px 0 36px 32px;
+
+      @include g.mq(md) {
+        display: block;
+        width: 100%;
+        padding: 24px;
+      }
+
+      @include g.mq(sm) {
+        padding: 16px;
+      }
+    }
+  }
+}
+
+.table {
+  .table__row {
+    .data__last {
+      padding: 43px 0 48px 32px;
+
+      @include g.mq(md) {
+        display: block;
+        width: 100%;
+        padding: 24px;
+      }
+
+      @include g.mq(sm) {
+        padding: 16px;
+      }
+    }
+  }
+}
+
+.data__last {
+  .data__br {
+    display: none;
+
+    @include g.mq(ms) {
+      display: block;
+    }
+
+    @include g.mq(sm) {
+      display: none;
+    }
+  }
+}
+
+.recruit__text {
+  padding-left: 2px;
+  margin-top: 37px;
+  text-align: center;
+
+  @include g.mq(sm) {
+    padding-right: 64px;
+    padding-left: 64px;
+    margin-top: 40px;
+  }
+}

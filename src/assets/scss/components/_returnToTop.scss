@@ -1,0 +1,48 @@
+@use "../global" as g;
+
+#returnToTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+  padding: 40px 8px 8px;
+  background: g.$mainColor;
+  border: g.$gradation_ver2 2px solid;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#returnToTop::before {
+  position: absolute;
+  top: 11px;
+  left: 18px;
+  display: inline-block;
+  width: 15px;
+  content: "";
+  border-top: g.$gradation_ver2 3px solid;
+  transform: rotate(-40deg);
+}
+
+#returnToTop::after {
+  position: absolute;
+  top: 11px;
+  right: 18px;
+  display: inline-block;
+  width: 15px;
+  content: "";
+  border-top: g.$gradation_ver2 3px solid;
+  transform: rotate(40deg);
+}
+
+.returnToTop__border {
+  position: absolute;
+  top: 6px;
+  left: 30px;
+  display: inline-block;
+  width: 3px;
+  height: 24px;
+  color: g.$gradation_ver2;
+  background-color: g.$gradation_ver2;
+  border-right: g.$gradation_ver2 3px solid;
+}
