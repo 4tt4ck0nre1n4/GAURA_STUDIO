@@ -22,7 +22,7 @@ const readConfigJSONFile = async (filePath) => {
   });
 };
 
-const root = resolve(__dirname, './src/pages');
+const root = resolve(process.cwd(), './src/pages');
 
 export default defineConfig(async () => {
   configs.pageData = await readConfigJSONFile('./src/configs/pageData.json');
@@ -30,29 +30,29 @@ export default defineConfig(async () => {
   return {
     root: root,
     base: '/',
-    publicDir: resolve(__dirname, 'public'),
+    publicDir: resolve(process.cwd(), 'public'),
     server: {
       port: 8080,
     },
     build: {
-      outDir: resolve(__dirname, 'dist'),
+      outDir: resolve(process.cwd(), 'dist'),
       emptyOutDir: true,
       rollupOptions: {
         input: {
-          index: resolve(__dirname, './src/pages/index.html'),
-          thanks: resolve(__dirname, './src/pages/thanks.html'),
-          404: resolve(__dirname, './src/pages/404.html'),
+          index: resolve(process.cwd(), './src/pages/index.html'),
+          thanks: resolve(process.cwd(), './src/pages/thanks.html'),
+          404: resolve(process.cwd(), './src/pages/404.html'),
         },
       },
     },
-    assetsInclude: [resolve(__dirname, 'public')],
+    assetsInclude: [resolve(process.cwd(), 'public')],
     plugins: [
       ViteMinifyPlugin(),
       handlebars({
         partialDirectory: [
-          resolve(__dirname, 'src/includes/common'),
-          resolve(__dirname, 'src/includes/components'),
-          resolve(__dirname, 'src/includes/modules'),
+          resolve(process.cwd(), 'src/includes/common'),
+          resolve(process.cwd(), 'src/includes/components'),
+          resolve(process.cwd(), 'src/includes/modules'),
         ],
         context: (pagePath) => {
           return {
@@ -66,8 +66,8 @@ export default defineConfig(async () => {
     ],
     resolve: {
       alias: {
-        '@': resolve(__dirname, 'src/assets/scss'),
-        '@js': resolve(__dirname, 'src/assets/js'),
+        '@': resolve(process.cwd(), 'src/assets/scss'),
+        '@js': resolve(process.cwd(), 'src/assets/js'),
       },
     },
   };
