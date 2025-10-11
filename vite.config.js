@@ -38,11 +38,11 @@ export default defineConfig(async () => {
       outDir: resolve(process.cwd(), 'dist'),
       emptyOutDir: true,
       rollupOptions: {
-        input: {
-          index: resolve(process.cwd(), './src/pages/index.html'),
-          thanks: resolve(process.cwd(), './src/pages/thanks.html'),
-          404: resolve(process.cwd(), './src/pages/404.html'),
-        },
+        input: [
+          resolve(process.cwd(), './src/pages/index.html'),
+          resolve(process.cwd(), './src/pages/thanks.html'),
+          resolve(process.cwd(), './src/pages/404.html'),
+        ],
       },
     },
     assetsInclude: [resolve(process.cwd(), 'public')],
