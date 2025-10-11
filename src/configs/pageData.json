@@ -3,11 +3,11 @@
     "name": "GAURA STUDIO",
     "name_separate": " | ",
     "description": "アートの新しい次元を探求するGAURAの挑戦。私たちはAIをクリエイティビティのパートナーとして、テクノロジーとアーティストの感性を融合させ、これからも驚くべき作品を生み出します。あなたのアートの未来を、私たちと共に創造しませんか？",
-    "domain": "hibari-konaweb.com/gaura_studio",
+    "domain": "gaura-studio.vercel.app",
     "ogp": {
       "type": "website",
       "locale": "ja_JP",
-      "image": "hibari-konaweb.com/gaura_studio/dist/images/gaura_studio.png"
+      "image": "/assets/images/gaura_studio.png"
     },
     "twitter": {
       "card": "summary_large_image",
@@ -40,7 +40,7 @@
     "description": "お問い合わせ誠にありがとうございます。",
     "ogp": {
       "type": "article",
-      "image": "hibari-konaweb.com/gaura_studio/dist/images/gaura_studio.png"
+      "image": "/assets/images/gaura_studio.png"
     },
     "twitter": {
       "card": "summary_large_image"
@@ -51,7 +51,7 @@
     "description": "ページが見つかりませんでした",
     "ogp": {
       "type": "article",
-      "image": "hibari-konaweb.com/gaura_studio/dist/images/gaura_studio.png"
+      "image": "/assets/images/gaura_studio.png"
     },
     "twitter": {
       "card": "summary_large_image"
