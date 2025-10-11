@@ -10,25 +10,30 @@ const configs = {
   pageData: {},
 };
 
-const readConfigJSONFile = (filePath) => {
-  try {
-    const file = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(file);
-  } catch (error) {
-    console.warn('Failed to load pageData.json:', error.message);
-    return {};
-  }
+const readConfigJSONFile = async (filePath) => {
+  return new Promise(async (resolve) => {
+    try {
+      const file = fs.readFileSync(filePath, 'utf-8');
+      resolve(JSON.parse(file));
+    } catch (error) {
+      console.warn('Failed to load pageData.json:', error.message);
+      resolve({});
+    }
+  });
 };
 
 const root = resolve(__dirname, './src/pages');
 
-export default defineConfig(() => {
-  configs.pageData = readConfigJSONFile('./src/configs/pageData.json');
+export default defineConfig(async () => {
+  configs.pageData = await readConfigJSONFile('./src/configs/pageData.json');
 
   return {
     root: root,
     base: '/',
     publicDir: resolve(__dirname, 'public'),
+    server: {
+      port: 8080,
+    },
     build: {
       outDir: resolve(__dirname, 'dist'),
       emptyOutDir: true,
@@ -40,6 +45,7 @@ export default defineConfig(() => {
         },
       },
     },
+    assetsInclude: [resolve(__dirname, 'public')],
     plugins: [
       ViteMinifyPlugin(),
       handlebars({
