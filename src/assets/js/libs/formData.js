@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     xhr.open(
       'POST',
       'https://docs.google.com/forms/u/0/d/e/1FAIpQLScv04pfDdu6EBM48I5CAP_duO4Wu21cRrMG7OgenzrXzcI9Sw/formResponse',
-      true
+      true,
     );
     xhr.onload = function () {
       if (xhr.status === 0) {
