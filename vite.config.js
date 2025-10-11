@@ -30,18 +30,18 @@ export default defineConfig(() => {
       emptyOutDir: true,
       rollupOptions: {
         input: {
-          index: path.resolve(__dirname, 'src/index.html'),
-          thanks: path.resolve(__dirname, 'src/thanks.html'),
-          404: path.resolve(__dirname, 'src/404.html'),
+          index: path.resolve(process.cwd(), 'src/index.html'),
+          thanks: path.resolve(process.cwd(), 'src/thanks.html'),
+          404: path.resolve(process.cwd(), 'src/404.html'),
         },
       },
     },
     plugins: [
       handlebars({
         partialDirectory: [
-          path.resolve(__dirname, 'src/includes/common'),
-          path.resolve(__dirname, 'src/includes/components'),
-          path.resolve(__dirname, 'src/includes/modules'),
+          path.resolve(process.cwd(), 'src/includes/common'),
+          path.resolve(process.cwd(), 'src/includes/components'),
+          path.resolve(process.cwd(), 'src/includes/modules'),
         ],
         context: (pagePath) => {
           return {
@@ -56,8 +56,8 @@ export default defineConfig(() => {
     ],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src/assets/scss'),
-        '@js': path.resolve(__dirname, 'src/assets/js'),
+        '@': path.resolve(process.cwd(), 'src/assets/scss'),
+        '@js': path.resolve(process.cwd(), 'src/assets/js'),
       },
     },
   };
