@@ -9,26 +9,27 @@ export default function middleware(request) {
   console.log(`Request method: ${request.method}`);
 
   // 静的アセットは認証をスキップ
-  const isStaticAsset = pathname.startsWith('/assets/') ||
-                       pathname.endsWith('.jpg') ||
-                       pathname.endsWith('.jpeg') ||
-                       pathname.endsWith('.png') ||
-                       pathname.endsWith('.gif') ||
-                       pathname.endsWith('.svg') ||
-                       pathname.endsWith('.ico') ||
-                       pathname.endsWith('.css') ||
-                       pathname.endsWith('.js') ||
-                       pathname.endsWith('.woff') ||
-                       pathname.endsWith('.woff2') ||
-                       pathname.endsWith('.ttf') ||
-                       pathname.endsWith('.webmanifest') ||
-                       pathname.endsWith('.webp') ||
-                       pathname.endsWith('.avif') ||
-                       pathname === '/favicon.ico' ||
-                       pathname === '/favicon.svg' ||
-                       pathname === '/apple-touch-icon.png' ||
-                       pathname === '/manifest.webmanifest' ||
-                       pathname === '/_favicon.svg';
+  const isStaticAsset =
+    pathname.startsWith('/assets/') ||
+    pathname.endsWith('.jpg') ||
+    pathname.endsWith('.jpeg') ||
+    pathname.endsWith('.png') ||
+    pathname.endsWith('.gif') ||
+    pathname.endsWith('.svg') ||
+    pathname.endsWith('.ico') ||
+    pathname.endsWith('.css') ||
+    pathname.endsWith('.js') ||
+    pathname.endsWith('.woff') ||
+    pathname.endsWith('.woff2') ||
+    pathname.endsWith('.ttf') ||
+    pathname.endsWith('.webmanifest') ||
+    pathname.endsWith('.webp') ||
+    pathname.endsWith('.avif') ||
+    pathname === '/favicon.ico' ||
+    pathname === '/favicon.svg' ||
+    pathname === '/apple-touch-icon.png' ||
+    pathname === '/manifest.webmanifest' ||
+    pathname === '/_favicon.svg';
 
   if (isStaticAsset) {
     console.log(`✅ Skipping auth for static asset: ${pathname}`);
@@ -68,7 +69,5 @@ export default function middleware(request) {
 }
 
 export const config = {
-  matcher: [
-    '/(.*)',
-  ],
+  matcher: ['/(.*)'],
 };

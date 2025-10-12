@@ -62,24 +62,25 @@ export default defineConfig(async () => {
           };
         },
       }),
-      ViteImageOptimizer({
-        test: /\.(jpe?g|png|gif|tiff|bmp|svg)$/i,
-        exclude: /node_modules/,
-        include: /public\/assets\/images/,
-        png: {
-          quality: 80,
-        },
-        jpeg: {
-          quality: 80,
-        },
-        jpg: {
-          quality: 80,
-        },
-        webp: {
-          quality: 80,
-          lossless: true,
-        },
-      }),
+      // ViteImageOptimizerを一時的に無効化して画像読み込みエラーを解決
+      // ViteImageOptimizer({
+      //   test: /\.(jpe?g|png|gif|tiff|bmp|svg)$/i,
+      //   exclude: /node_modules/,
+      //   include: /public\/assets\/images/,
+      //   png: {
+      //     quality: 80,
+      //   },
+      //   jpeg: {
+      //     quality: 80,
+      //   },
+      //   jpg: {
+      //     quality: 80,
+      //   },
+      //   webp: {
+      //     quality: 80,
+      //     lossless: true,
+      //   },
+      // }),
     ],
     resolve: {
       alias: {
