@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // スムーススクロール機能
   function initSmoothScroll() {
     const menuLinks = document.querySelectorAll('.header__menu_link[href^="#"]');
-    
-    menuLinks.forEach(link => {
+
+    menuLinks.forEach((link) => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        
+
         const targetId = link.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        
+
         if (targetElement) {
           // スムーススクロールでターゲット要素に移動
           gsap.to(window, {
@@ -31,6 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-  
+
   initSmoothScroll();
 });
