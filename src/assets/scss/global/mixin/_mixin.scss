@@ -43,59 +43,64 @@
 // mainVisual background-image
 @mixin background-image {
   background-image: url("#{v.$background_image}");
-  background-image: image-set(url("#{v.$background_image}") 1x, url("#{v.$background_image2x}") 2x);
-  background-image: -webkit-image-set(
-    url("#{v.$background_image}") 1x,
-    url("#{v.$background_image2x}") 2x
-  );
+  // Temporarily disabled image-set for debugging
+  // background-image: image-set(url("#{v.$background_image}") 1x, url("#{v.$background_image2x}") 2x);
+  // background-image: -webkit-image-set(
+  //   url("#{v.$background_image}") 1x,
+  //   url("#{v.$background_image2x}") 2x
+  // );
 }
 
 @mixin background-image__second {
   background-image: url("#{v.$background_image__second}");
-  background-image: image-set(
-    url("#{v.$background_image__second}") 1x,
-    url("#{v.$background_image2x__second}") 2x
-  );
-  background-image: -webkit-image-set(
-    url("#{v.$background_image__second}") 1x,
-    url("#{v.$background_image2x__second}") 2x
-  );
+  // Temporarily disabled image-set for debugging
+  // background-image: image-set(
+  //   url("#{v.$background_image__second}") 1x,
+  //   url("#{v.$background_image2x__second}") 2x
+  // );
+  // background-image: -webkit-image-set(
+  //   url("#{v.$background_image__second}") 1x,
+  //   url("#{v.$background_image2x__second}") 2x
+  // );
 }
 
 @mixin background-image__third {
   background-image: url("#{v.$background_image__third}");
-  background-image: image-set(
-    url("#{v.$background_image__third}") 1x,
-    url("#{v.$background_image2x__third}") 2x
-  );
-  background-image: -webkit-image-set(
-    url("#{v.$background_image__third}") 1x,
-    url("#{v.$background_image2x__third}") 2x
-  );
+  // Temporarily disabled image-set for debugging
+  // background-image: image-set(
+  //   url("#{v.$background_image__third}") 1x,
+  //   url("#{v.$background_image2x__third}") 2x
+  // );
+  // background-image: -webkit-image-set(
+  //   url("#{v.$background_image__third}") 1x,
+  //   url("#{v.$background_image2x__third}") 2x
+  // );
 }
 
 @mixin background-image__forth {
   background-image: url("#{v.$background_image__forth}");
-  background-image: image-set(
-    url("#{v.$background_image__forth}") 1x,
-    url("#{v.$background_image2x__forth}") 2x
-  );
-  background-image: -webkit-image-set(
-    url("#{v.$background_image__forth}") 1x,
-    url("#{v.$background_image2x__forth}") 2x
-  );
+  // Temporarily disabled image-set for debugging
+  // background-image: image-set(
+  //   url("#{v.$background_image__forth}") 1x,
+  //   url("#{v.$background_image2x__forth}") 2x
+  // );
+  // background-image: -webkit-image-set(
+  //   url("#{v.$background_image__forth}") 1x,
+  //   url("#{v.$background_image2x__forth}") 2x
+  // );
 }
 
 @mixin background-image__page404 {
   background-image: url("#{v.$background_image__page404}");
-  background-image: image-set(
-    url("#{v.$background_image__page404}") 1x,
-    url("#{v.$background_image2x__page404}") 2x
-  );
-  background-image: -webkit-image-set(
-    url("#{v.$background_image__page404}") 1x,
-    url("#{v.$background_image2x__page404}") 2x
-  );
+  // Temporarily disabled image-set for debugging
+  // background-image: image-set(
+  //   url("#{v.$background_image__page404}") 1x,
+  //   url("#{v.$background_image2x__page404}") 2x
+  // );
+  // background-image: -webkit-image-set(
+  //   url("#{v.$background_image__page404}") 1x,
+  //   url("#{v.$background_image2x__page404}") 2x
+  // );
 }
 
 // section "contact" checkbox background-image
