@@ -33,8 +33,8 @@
   font-size: g.$f28;
   font-weight: 800;
   line-height: 1.5;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.3);
 
   @include g.mq(lg) {
     font-size: g.$f24;

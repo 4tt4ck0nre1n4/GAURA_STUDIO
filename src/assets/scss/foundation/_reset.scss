@@ -119,12 +119,12 @@ button:-moz-focusring,
 
 [type="checkbox"] {
   -webkit-appearance: checkbox;
-  appearance: checkbox;
+  appearance: auto;
 }
 
 [type="radio"] {
   -webkit-appearance: radio;
-  appearance: radio;
+  appearance: auto;
 
   // appearance: none;
 }

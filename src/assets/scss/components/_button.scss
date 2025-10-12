@@ -7,9 +7,9 @@
   max-width: 156px;
   overflow: hidden;
   border-radius: g.$radius_ver10;
-  transition: 0.4s;
   perspective: 2000px;
   perspective-origin: 50% 50%;
+  transition: 0.4s;
 
   @include g.mq(ml) {
     font-size: g.$f14;
@@ -49,9 +49,9 @@
     white-space: nowrap;
     background: g.$main_gradation;
     border-radius: g.$radius_ver10;
-    transition: 0.4s;
     transform-origin: 50% 0%;
     transform-style: preserve-3d;
+    transition: 0.4s;
 
     @include g.box-shadow;
   }

@@ -45,6 +45,18 @@ module.exports = {
     // ベンダープレフィックス（autoprefixerを使用しているため）
     'property-no-vendor-prefix': null,
     'value-no-vendor-prefix': null,
+
+    // 非推奨プロパティ（互換性のため許可）
+    'property-no-deprecated': null,
+    'declaration-block-single-line-max-declarations': null,
   },
-  ignoreFiles: ['dist/**/*', 'node_modules/**/*', '**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
+  ignoreFiles: [
+    'dist/**/*',
+    'src/dist/**/*',
+    'node_modules/**/*',
+    '**/*.js',
+    '**/*.jsx',
+    '**/*.ts',
+    '**/*.tsx',
+  ],
 };

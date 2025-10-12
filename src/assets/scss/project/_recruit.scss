@@ -94,10 +94,10 @@
       @include g.font-style;
 
       width: 27%;
+      vertical-align: middle;
       color: g.$textColor;
       text-align: left;
       white-space: nowrap;
-      vertical-align: middle;
       border-right: g.$border_color 1px solid;
 
       @include g.mq(ml) {
@@ -177,10 +177,10 @@
       @include g.font-style;
 
       width: 73%;
+      vertical-align: middle;
       color: g.$textColor;
       text-align: left;
       white-space: nowrap;
-      vertical-align: middle;
 
       @include g.mq(ml) {
         font-size: g.$f15;

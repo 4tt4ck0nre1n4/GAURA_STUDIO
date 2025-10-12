@@ -35,8 +35,8 @@
   width: 640px;
   height: 320px;
   margin-left: 320px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  background: rgba(255, 255, 255, 0.7);
+  text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.3);
+  background: rgb(255, 255, 255, 0.7);
 
   @include g.mq(xl) {
     margin-left: 240px;

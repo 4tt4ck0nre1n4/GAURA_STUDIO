@@ -135,19 +135,19 @@
 
 .header__nav[aria-hidden="true"] {
   @include g.mq(sm) {
-    -webkit-transition: ease 0.5s;
-    transition: ease 0.5s;
     -webkit-transform: translateY(1500%);
     transform: translateY(1500%);
+    -webkit-transition: ease 0.5s;
+    transition: ease 0.5s;
   }
 }
 
 .header__nav[aria-hidden="false"] {
   @include g.mq(sm) {
-    -webkit-transition: ease 0.5s;
-    transition: ease 0.5s;
     -webkit-transform: translateY(0);
     transform: translateX(0);
+    -webkit-transition: ease 0.5s;
+    transition: ease 0.5s;
   }
 }
 
@@ -169,11 +169,11 @@ body.js-fixed {
     inset: 0;
     z-index: -1;
     display: block;
+    visibility: hidden;
     width: 100vw;
     height: 100vh;
     cursor: pointer;
-    visibility: hidden;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgb(0, 0, 0, 0.6);
     opacity: 0;
     -webkit-transition: all 0.6s;
     transition: all 0.6s;
