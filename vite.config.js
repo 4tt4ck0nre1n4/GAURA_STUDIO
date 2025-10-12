@@ -62,7 +62,24 @@ export default defineConfig(async () => {
           };
         },
       }),
-      ViteImageOptimizer(configs.pageData.image?.optimization || {}),
+      ViteImageOptimizer({
+        test: /\.(jpe?g|png|gif|tiff|bmp|svg)$/i,
+        exclude: /node_modules/,
+        include: /public\/assets\/images/,
+        png: {
+          quality: 80,
+        },
+        jpeg: {
+          quality: 80,
+        },
+        jpg: {
+          quality: 80,
+        },
+        webp: {
+          quality: 80,
+          lossless: true,
+        },
+      }),
     ],
     resolve: {
       alias: {

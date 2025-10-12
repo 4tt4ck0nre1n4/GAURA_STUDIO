@@ -1,3 +1,12 @@
 {
-  "framework": "vite"
+  "framework": "vite",
+  "functions": {
+    "src/pages/api/auth/index.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "env": {
+    "BASIC_AUTH_USER": "gaura",
+    "BASIC_AUTH_PASSWORD": "studio2024"
+  }
 }
