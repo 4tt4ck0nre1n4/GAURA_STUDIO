@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../global" as g;
 
 // section "works"
@@ -34,7 +35,7 @@ $swiper_breakpoints: (
 );
 
 @mixin swiper_mq($swiper_breakpoint: tab_swiper) {
-  @media #{map-get($swiper_breakpoints, $swiper_breakpoint)} {
+  @media #{map.get($swiper_breakpoints, $swiper_breakpoint)} {
     @content;
   }
 }

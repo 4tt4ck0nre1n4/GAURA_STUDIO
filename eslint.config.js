@@ -3,13 +3,7 @@ import globals from 'globals';
 
 export default [
   {
-    ignores: [
-      'dist/**',
-      'node_modules/**',
-      '**/*.min.js',
-      'public/**',
-      'src/dist/**',
-    ],
+    ignores: ['dist/**', 'node_modules/**', '**/*.min.js', 'public/**', 'src/dist/**'],
   },
   {
     files: ['**/*.js'],
@@ -44,4 +38,3 @@ export default [
     },
   },
 ];
-

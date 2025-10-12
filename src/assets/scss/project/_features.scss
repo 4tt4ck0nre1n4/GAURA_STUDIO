@@ -1,4 +1,5 @@
-@use "../global" as g;
+@use 'sass:map';
+@use '../global' as g;
 
 // section "features"
 .features {
@@ -22,7 +23,7 @@
 }
 
 @mixin f-mq($breakpoint: f-lg) {
-  @media #{map-get($breakpoints, $breakpoint)} {
+  @media #{map.get($breakpoints, $breakpoint)} {
     @content;
   }
 }
