@@ -1,6 +1,7 @@
 export * from '@js/libs/hamburger';
 export * from '@js/libs/accordion';
 export * from '@js/libs/scrollToTrigger';
+export * from '@js/libs/smoothScroll';
 export * from '@js/libs/configParticles';
 export * from '@js/libs/screenTransition';
 export * from '@js/libs/buttonTransition';
