@@ -21,6 +21,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @include g.box-shadow;
   margin-top: 54px;
 
   @include g.mq(sm) {

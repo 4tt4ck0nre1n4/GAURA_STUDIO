@@ -8,7 +8,6 @@
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
-
   @include g.background-image__second;
 
   @include g.mq(sm) {
@@ -20,7 +19,6 @@
 
 .recruit__wrapper {
   $size: 926px;
-
   width: 100%;
   max-width: $size;
   padding-right: 16px;
@@ -30,25 +28,21 @@
 
   @include g.mq(mm) {
     $size: 769px;
-
     max-width: $size;
   }
 
   @include g.mq(md) {
     $size: 640px;
-
     max-width: $size;
   }
 
   @include g.mq(sl) {
     $size: 480px;
-
     max-width: $size;
   }
 
   @include g.mq(sm) {
     $size: 350px;
-
     max-width: $size;
   }
 
