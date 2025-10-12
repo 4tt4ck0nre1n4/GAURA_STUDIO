@@ -68,6 +68,7 @@ export default defineConfig(async () => {
       alias: {
         '@': resolve(process.cwd(), 'src/assets/scss'),
         '@js': resolve(process.cwd(), 'src/assets/js'),
+        '~': resolve(process.cwd(), 'public'),
       },
     },
   };
